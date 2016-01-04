@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER Daniel Guerra
 RUN apt-get -yy update \
-&& apt-get -yy install wget libx11-6 libx11-xcb1 libfontconfig1 supervisor xvfb x11vnc \
+&& apt-get -yy install wget libx11-6 libx11-xcb1 libfontconfig1 supervisor xvfb x11vnc openbox \
 && cd /tmp \
 && wget http://www.soulseekqt.net/SoulseekQT/Linux/SoulseekQt-2015-6-25-64bit.tgz \
 && tar xvfz SoulseekQt-2015-6-25-64bit.tgz \
