@@ -1,0 +1,1 @@
+ docker run -d -p 5900:5900 --name soulseek -v /Users/Downloads:/home/soulseek/.wine/drive_c/users/soulseek/My\ Documents/Soulseek\ Downloads -v /Users/Music:/home/soulseek/.wine/drive_c/users/soulseek/My\ Documents/Shared danielguerra/soulseek
