@@ -21,5 +21,11 @@ ADD soulseek /usr/bin/soulseek
 RUN chown soulseek:soulseek /usr/bin/soulseek*
 ADD winetricks /home/soulseek/winetricks
 RUN chown soulseek:soulseek /home/soulseek/winetricks
+ENV WINEPREFIX /home/soulseek/.wine
+ENV WINEARCH win32
+ENV DISPLAY :1
+#USER soulseek
+#RUN /home/soulseek/winetricks --unattended soulseek
+#USER root
 ADD start /bin/start
 CMD ["/bin/start"]
