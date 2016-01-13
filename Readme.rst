@@ -11,6 +11,15 @@ Start soulseek vnc server,  /Users/Music your sharing music map & /Users/Downloa
 ```bash
 docker run --name=soulseek -v /Users/Music/:/home/soulseek/Music -v /Users/Downloads:/home/soulseek/Downloads -p 5900:5900 -d danielguerra/soulseek
 ```
+
+To use a browser-only html5 version start
+```bash
+docker run --name=soulseek -v /Users/Music/:/home/soulseek/Music -v /Users/Downloads:/home/soulseek/Downloads -p 6080:6080 -d danielguerra/soulseek:html5
+```
+After this you can open this url in your browser
+http://<mydockerhost>:6080/
+press connect (no password)
+
 & check
 ```bash
 docker logs soulseek
