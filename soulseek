@@ -1,4 +1,4 @@
 #! /bin/bash
 export TERM=xterm
 export DISPLAY=":1"
-wine ~/.wine/drive_c/Program\ Files\ \(x86\)/SoulseekQt/SoulseekQt.exe
+wine ~/.wine/drive_c/Program\ Files/SoulseekQt/SoulseekQt.exe
