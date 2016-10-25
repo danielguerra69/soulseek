@@ -1,40 +1,30 @@
-#### Soulseek vnc service for docker
+### Soulseek vnc service for docker
+![Soulseek-logo](http://www.slsknet.org/news/sites/default/files/slsk_bird.jpg)
 
-### Image Size
+## Usage
 
-* [![Latest](https://badge.imagelayers.io/danielguerra/soulseek.svg)](https://imagelayers.io/?images=danielguerra/soulseek:latest 'latest') danielguerra/soulseek
-
-### Usage
-
-Start soulseek vnc server,  /Users/Music your sharing music map & /Users/Downloads your download map.
+Start [Soulseek](http://www.slsknet.org/) vnc server,  /Users/Music your sharing music map & /Users/Downloads your download map.
 
 ```bash
 docker run --name=soulseek -v /Users/Music/:/home/soulseek/Music -v /Users/Downloads:/home/soulseek/Downloads -p 5900:5900 -d danielguerra/soulseek
 ```
-
-To use a browser-only html5 version start
-```bash
-docker run --name=soulseek -v /Users/Music/:/home/soulseek/Music -v /Users/Downloads:/home/soulseek/Downloads -p 6080:6080 -d danielguerra/soulseek:html5
-```
-After this you can open this url in your browser
-http://<mydockerhost>:6080/
-press connect (no password)
 
 & check
 ```bash
 docker logs soulseek
 ```
 After this use a vnc client to connect (dockerhost:5900)
-Everything should start automaticly, if not try the following:
+Everything should start automaticly, Click Ok, next next finish yes.
 
+If not try the following:
 In your vnc session right click your mouse then choose install soulseek.
-Click next next finish yes.
+Click Ok, next next finish yes.
 Right click again and choose start soulseek.
 Login with your soulseek account.
 
-In case this doesn't work choose xterm form the menu and type
-/bin/bash
-export TERM=xterm
-export DISPLAY=":1"
-wine /bin/SoulseekQt-2015-6-12.exe
-wine ~/.wine/drive_c/Program\ Files\ \(x86\)/SoulseekQt/SoulseekQt.exe
+If you want to install more packages you can right click in the vnc screen
+and choose xterm. The password is soulseek
+```bash
+sudo apt-get update
+sudo apt-get chrome
+```
