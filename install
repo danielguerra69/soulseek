@@ -1,8 +1,7 @@
 #! /bin/bash
-sleep 10
+
 if [ ! -f ~/.wine/drive_c/Program\ Files/SoulseekQt/SoulseekQt.exe ] ; then
   export TERM=xterm
   export DISPLAY=":1"
-  wine /bin/SoulseekQt-2015-6-12.exe
-  wine ~/.wine/drive_c/Program\ Files/SoulseekQt/SoulseekQt.exe
+  ./winetricks -q soulseek
 fi

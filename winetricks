@@ -10670,33 +10670,33 @@ _EOF_
 #----------------------------------------------------------------
 
 w_metadata soulseek dlls \
-    title="Soulseek , version 2015-6-12" \
+    title="Soulseek , version 2016-4-24" \
     publisher="Soulseek Software Foundaton" \
-    year="2009" \
+    year="2016" \
     media="download" \
-    file1="SoulseekQt-2015-6-12.exe" \
+    file1="SoulseekQt-2016-4-24.exe" \
     installed_exe1="c:/Program\ Files\ \(x86\)/SoulseekQt/SoulseekQt.exe"
 
 load_soulseek()
 {
-    w_download http://www.slsknet.org/SoulseekQT/Windows/SoulseekQt-2015-6-12.exe 2eae8c2db10288a54871bcb976a0e26398d4e336
+    w_download https://www.dropbox.com/s/adivgmpo08pgq13/SoulseekQt-2016-4-24.exe 6c721879c97603da5e2cd548f43a104eca6deaee
     cd "$W_CACHE/$W_PACKAGE"
     w_ahk_do "
         SetTitleMatchMode, 2
-        run SoulseekQt-2015-6-12.exe
+        run SoulseekQt-2016-4-24.exe
         WinWait, Setup, Wizard will install soulseek
         if ( w_opt_unattended > 0 ) {
-             ControlClick Button2   ; Install
-             WinWait, Setup, wine mono is required
-             ControlClick Button2   ; Install
-             WinWait, Setup, wine gecko is required
-             ControlClick Button2   ; Install
-             WinWait, Setup, wine gecko is required
-             ControlClick Button2   ; next
+             ControlClick Button1   ; OK
+             WinWait, Setup, soulseek ok
+             ControlClick Button1   ; Next
              WinWait, Setup, soulseek is required
-             ControlClick Button4   ; install
-             WinWait, Setup, soulseek is required
-             ControlClick Button4   ; close
+             ControlClick Button2   ; Next
+             WinWait, Setup, soulseek next
+             ControlClick Button2   ; Next
+             WinWait, Setup, soulseek install
+             ControlClick Button1   ; Install
+             WinWait, Setup, soulseek finish
+             ControlClick Button1   ; Finish
         }
         WinWaitClose
         "
