@@ -7,7 +7,7 @@
 Start [Soulseek](http://www.slsknet.org/) vnc server,  /Users/Music your sharing music map & /Users/Downloads your download map.
 
 ```
-$ docker run 
+$ docker run \
     --name=soulseek \
     -v /Users/Music/:/home/soulseek/Music \
     -v /Users/Downloads:/home/soulseek/Downloads \
