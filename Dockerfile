@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu
 MAINTAINER Daniel Guerra
 RUN dpkg --add-architecture i386
 RUN apt-get -yy update \
