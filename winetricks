@@ -10670,20 +10670,20 @@ _EOF_
 #----------------------------------------------------------------
 
 w_metadata soulseek dlls \
-    title="Soulseek , version 2016-4-24" \
+    title="Soulseek , version 2017-2-20" \
     publisher="Soulseek Software Foundaton" \
-    year="2016" \
+    year="2017" \
     media="download" \
-    file1="SoulseekQt-2016-4-24.exe" \
+    file1="SoulseekQt-2017-2-20.exe" \
     installed_exe1="c:/Program\ Files\ \(x86\)/SoulseekQt/SoulseekQt.exe"
 
 load_soulseek()
 {
-    w_download https://www.dropbox.com/s/adivgmpo08pgq13/SoulseekQt-2016-4-24.exe 6c721879c97603da5e2cd548f43a104eca6deaee
+    w_download https://www.slsknet.org/SoulseekQt/Windows/SoulseekQt-2017-2-20.exe bcedb8a83393e2939f1a91b3a0ca439fe40f795f
     cd "$W_CACHE/$W_PACKAGE"
     w_ahk_do "
         SetTitleMatchMode, 2
-        run SoulseekQt-2016-4-24.exe
+        run SoulseekQt-2017-2-20.exe
         WinWait, Setup, Wizard will install soulseek
         if ( w_opt_unattended > 0 ) {
              ControlClick Button1   ; OK
@@ -10700,7 +10700,7 @@ load_soulseek()
         }
         WinWaitClose
         "
-}
+}              
 
 #----------------------------------------------------------------
 
