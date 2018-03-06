@@ -8,6 +8,8 @@ RUN apt-get -yy update \
 && apt-get -y install winehq-devel \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# Add german characters in terminal
+RUN echo "set convert-meta off" >> /etc/inputrc
 RUN addgroup soulseek
 RUN useradd -m -s /bin/bash -g soulseek soulseek
 RUN echo "soulseek:soulseek" | /usr/sbin/chpasswd
