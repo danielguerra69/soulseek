@@ -2,6 +2,7 @@
 export TERM=xterm
 export DISPLAY=":1"
 if [ ! -f ~/.wine/drive_c/Program\ Files/SoulseekQt/SoulseekQt.exe ] ; then
+  ./winetricks -q 7zip
   ./winetricks -q soulseek
 fi
 wine ~/.wine/drive_c/Program\ Files/SoulseekQt/SoulseekQt.exe
