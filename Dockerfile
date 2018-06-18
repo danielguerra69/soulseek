@@ -2,7 +2,8 @@ FROM ubuntu
 MAINTAINER Daniel Guerra
 RUN dpkg --add-architecture i386
 RUN apt-get -yy update \
-&& apt-get -y install --no-install-recommends sudo wget libx11-6 libx11-xcb1 libfontconfig1 supervisor xvfb x11vnc software-properties-common openbox xterm\
+&& apt-get -y install --no-install-recommends sudo wget libx11-6 libx11-xcb1 libfontconfig1 \
+supervisor xvfb x11vnc software-properties-common openbox xterm openssh\
 && add-apt-repository ppa:wine/wine-builds \
 && apt-get -yy update \
 && apt-get -y install winehq-devel \
@@ -26,5 +27,5 @@ ENV WINEARCH win32
 ENV DISPLAY :1
 ADD start /bin/start
 USER soulseek
-EXPOSE 5900 6080
+EXPOSE 5900 6080 22
 CMD ["/bin/start"]
