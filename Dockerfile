@@ -1,14 +1,12 @@
-FROM ubuntu
+FROM ubuntu:18.04
 MAINTAINER Daniel Guerra
-RUN dpkg --add-architecture i386
 RUN apt-get -yy update \
 && apt-get -y install --no-install-recommends sudo wget libx11-6 libx11-xcb1 libfontconfig1 \
-supervisor xvfb x11vnc software-properties-common openbox xterm openssh\
-&& add-apt-repository ppa:wine/wine-builds \
-&& apt-get -yy update \
-&& apt-get -y install winehq-devel \
+supervisor xvfb x11vnc software-properties-common openbox xterm \
 && apt-get clean \
-&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/log/*
+# add soulseek
+RUN wget -qO- "https://www.dropbox.com/s/7qh902qv2sxyp6p/SoulseekQt-2016-1-17-64bit.tgz?dl=1" | tar xzvf - -C /usr/bin --transform='s/.*/soulseek/'
 # Add german characters in terminal
 RUN echo "set convert-meta off" >> /etc/inputrc
 RUN addgroup soulseek
@@ -18,12 +16,8 @@ RUN echo "soulseek    ALL=(ALL) ALL" >> /etc/sudoers
 WORKDIR /home/soulseek
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD menu.xml /etc/xdg/openbox/menu.xml
-ADD soulseek /usr/bin/soulseek
 RUN chown soulseek:soulseek /usr/bin/soulseek*
-ADD winetricks /home/soulseek/winetricks
 RUN chown soulseek:soulseek /home/soulseek
-ENV WINEPREFIX /home/soulseek/.wine
-ENV WINEARCH win32
 ENV DISPLAY :1
 ADD start /bin/start
 USER soulseek

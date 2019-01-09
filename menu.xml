@@ -11,9 +11,6 @@
   <separator />
   <menu id="client-list-menu" />
   <separator />
-  <item label="Install Soulseek">
-    <action name="Execute"><command>winetricks soulseek</command></action>
-  </item>
   <item label="Start Soulseek">
     <action name="Execute"><command>soulseek</command></action>
   </item>
