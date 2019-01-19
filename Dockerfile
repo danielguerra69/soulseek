@@ -15,11 +15,13 @@ RUN echo "soulseek:soulseek" | /usr/sbin/chpasswd
 RUN echo "soulseek    ALL=(ALL) ALL" >> /etc/sudoers
 WORKDIR /home/soulseek
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-ADD menu.xml /etc/xdg/openbox/menu.xml
+ADD openbox /etc/xdg/openbox
+ADD bin /bin
 RUN chown soulseek:soulseek /usr/bin/soulseek*
 RUN chown soulseek:soulseek /home/soulseek
 ENV DISPLAY :1
-ADD start /bin/start
+
 USER soulseek
-EXPOSE 5900 6080 22
+EXPOSE 5900
+ENTRYPOINT ["/bin/docker-entrypoint.sh"]
 CMD ["/bin/start"]

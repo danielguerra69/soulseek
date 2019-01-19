@@ -9,8 +9,7 @@ Start [Soulseek](http://www.slsknet.org/) vnc server,  /Users/Music your sharing
 ```
 $ docker run \
     --name=soulseek \
-    -v /Users/Music/:/home/soulseek/Music \
-    -v /Users/Downloads:/home/soulseek/Downloads \
+    -v /Users/Music:/home/soulseek
     -p 5900:5900 \
     -d \
     danielguerra/soulseek
@@ -23,6 +22,9 @@ $ docker logs soulseek
 
 After this use a vnc client to connect (dockerhost:5900)
 Everything should start automaticly, Click Ok, next next finish yes.
+
+If you copy music into /Users/Music/share you have to restart
+the container to set the proper user-rights.
 
 If not try the following:
 In your vnc session right click your mouse then choose install soulseek.

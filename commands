@@ -1,1 +1,1 @@
- docker run -d -p 5900:5900 --name soulseek -v /Users/Downloads:/home/soulseek/Downloads -v /Users/Music:/home/soulseek/Music danielguerra/soulseek
+ docker run -d -p 5900:5900 --name soulseek -v /Users/Downloads:/home/soulseek danielguerra/soulseek
