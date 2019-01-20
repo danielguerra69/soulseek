@@ -2,6 +2,7 @@
 
 ![Soulseek-logo](http://www.slsknet.org/news/sites/default/files/slsk_bird.jpg)
 
+
 ## Usage
 
 Start [Soulseek](http://www.slsknet.org/) vnc server,  /Users/Music your sharing music map & /Users/Downloads your download map.
@@ -14,6 +15,25 @@ $ docker run \
     -d \
     danielguerra/soulseek
 ```
+
+NEW!
+
+Or if you have enough resources use the new Remote Desktop version.
+You can connect with a RDP client to port 3389. The xrdp provides sound
+and you can play music with vlc.
+
+* WARNING: use the --shm-size 1g or firefox will crash
+
+```
+$ docker run \
+    --name=soulseek \
+    -v /Users/Music:/home/soulseek \
+    --shm-size 1g \
+    -p 3389:3389 \
+    -d \
+    danielguerra/soulseek:xrdp
+```
+
 
 and check:
 ```
