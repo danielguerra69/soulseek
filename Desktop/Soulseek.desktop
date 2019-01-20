@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Soulseek
+Comment=Soulseek Music
+Exec=soulseek
+Icon=gmusicbrowser
+Path=/usr/bin
+Terminal=false
+StartupNotify=false
