@@ -1,6 +1,6 @@
 #!/bin/bash
 
-chown soulseek:soulseek /home/soulseek
+chown -r soulseek:soulseek /home/soulseek
 
 # Add the ssh config if needed
 
