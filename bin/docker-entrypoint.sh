@@ -1,7 +1,7 @@
 #!/bin/bash
 
-chown -r soulseek:soulseek /home/soulseek
-chmod -r a+r /home/soulseek
+chown -R soulseek:soulseek /home/soulseek
+chmod -R a+r /home/soulseek
 
 # Add the ssh config if needed
 
