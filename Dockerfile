@@ -6,7 +6,7 @@ supervisor xvfb x11vnc software-properties-common openbox xterm \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/log/*
 # add soulseek
-RUN wget -qO- "https://www.dropbox.com/s/7qh902qv2sxyp6p/SoulseekQt-2016-1-17-64bit.tgz?dl=1" | tar xzvf - -C /usr/bin --transform='s/.*/soulseek/'
+RUN wget -qO- "https://www.slsknet.org/SoulseekQt/Linux/SoulseekQt-2018-1-30-64bit-appimage.tgz" | tar xzvf - -C /usr/bin --transform='s/.*/soulseek/'
 # Add german characters in terminal
 RUN echo "set convert-meta off" >> /etc/inputrc
 RUN addgroup soulseek
