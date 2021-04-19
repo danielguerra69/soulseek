@@ -24,10 +24,11 @@ and you can play music with vlc.
 
 * WARNING: use the --shm-size 1g or firefox will crash
 
+* Note for now you cant use a mount in /home/soulseek use /mnt/Music instead
 ```
 $ docker run \
     --name=soulseek \
-    -v /Users/Music:/home/soulseek \
+    -v /Users/Music:/mnt/Music \
     --shm-size 1g \
     -p 3389:3389 \
     -d \
