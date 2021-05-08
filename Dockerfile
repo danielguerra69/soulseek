@@ -1,4 +1,4 @@
-FROM danielguerra/ubuntu-xrdp:20.04
+FROM danielguerra/ubuntu-xrdp:latest
 MAINTAINER Daniel Guerra
 
 RUN wget -qO- "https://www.slsknet.org/SoulseekQt/Linux/SoulseekQt-2018-1-30-64bit-appimage.tgz" | tar xzvf - -C /tmp --transform='s/.*/soulseek/'
